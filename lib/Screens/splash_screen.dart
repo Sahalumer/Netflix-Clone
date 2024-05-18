@@ -1,4 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
+import 'package:netflixclone/Widget/bottom_nav_bar.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -9,7 +13,21 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
+  void initState() {
+    super.initState();
+    Timer(const Duration(seconds: 4), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (ctx) => const BottomNavBar()));
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Center(
+        child: Lottie.asset("assets/netflix.json"),
+      ),
+    );
   }
 }

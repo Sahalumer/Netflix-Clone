@@ -19,7 +19,10 @@ class MyApp extends StatelessWidget {
           bodyMedium: TextStyle(color: Colors.white, fontSize: 20),
           bodyLarge: TextStyle(color: Colors.white, fontSize: 24),
         ),
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: Colors.deepPurple).copyWith(
+          background: Colors.black,
+        ),
         useMaterial3: true,
       ),
       home: const SplashScreen(),
